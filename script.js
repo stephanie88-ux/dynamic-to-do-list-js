@@ -1,16 +1,22 @@
 document.addEventListener("DOMContentLoaded", event() => {
-    const button = document.getElementById("addButton");
-    const taskList = document.getElementById("taskList");
-    const inputField = document.getElementById("taskInput");
+    const addButton = document.getElementById("add task-button");
+    const Taskinput = document.getElementById("task-input");
+    const taskList = document.getElementById("task-list");
 
-    const addTask = () => {
-        const taskText = inputField.value.trim();
-        if (taskText) {
-            const listItem = document.createElement("li");
-            listItem.textContent = taskText;
-            taskList.appendChild(listItem);
-            inputField.value = ""; // Clear the input field
-        } else {
+    function addTask() {
+        const taskText = Taskinput.value.trim();
+        if (taskText === "") {
             alert("Please enter a task.");
+            return;
         }
+        const li = document.createElement("li");
+        li.textContent = taskText;
 
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", () => {
+            taskList.removeChild(li);
+        });
+
+       
