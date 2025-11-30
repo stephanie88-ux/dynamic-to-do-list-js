@@ -1,12 +1,20 @@
 document.addEventListener("DOMContentLoaded", event() => {
+    loadtasks();
+     
     const addButton = document.getElementById("add-task-btn");
     const taskinput = document.getElementById("task-input");
     const taskInput= document.getElementById("taskInput");
     const taskList = document.getElementById("task-list");
 
-    function addTask() {
-        const taskText = taskInput.value.trim();
-        if (taskText === "") {
+    function loadtasks() {
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    
+         
+
+
+         function addTask() {
+         const taskText = taskInput.value.trim();
+         if (taskText === "") {
             alert("Please enter a task.");
             return;
         }
