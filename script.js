@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", event() => {
 
     function loadtasks() {
         const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    
-         
 
-
+        function saveTasks() {
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
          function addTask() {
          const taskText = taskInput.value.trim();
          if (taskText === "") {
