@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", event() => {
         
         li.appendChild(removeButton);
         taskList.appendChild(li);
+        classList.add("task-item")
         };
  
         Taskinput.value = "";
