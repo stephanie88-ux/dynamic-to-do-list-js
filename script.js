@@ -9,14 +9,27 @@ document.addEventListener("DOMContentLoaded", event() => {
             alert("Please enter a task.");
             return;
         }
-        const li = document.createElement("li");
-        li.textContent = taskText;
-
-
-        const removeButton = document.createElement("button");
+         constRemoveButton = document.createElement("button");
         removeButton.textContent = "Remove";
+
         removeButton.addEventListener("click", () => {
-            taskList.removeChild(li);
-        });
+            taskList.removeChild(taskItem);
+        }
+        li = document.createElement("li");
+        taskItem.textContent = taskText + " ";
+        taskItem.appendChild(removeButton);
+        taskList.appendChild(taskItem); 
+
+        Taskinput.value = "";
+    }
+        
+    addButton.addEventListener("click", addTask);
+
+    taskImput.addEventListener('keypress', finction (event) {
+        if (event.key === "Enter") {
+            addTask();
+        }   
+    });
+
 
        
