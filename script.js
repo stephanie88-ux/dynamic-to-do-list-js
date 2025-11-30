@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", event() => {
     const addButton = document.getElementById("add-task-btn");
-    const Taskinput = document.getElementById("task-Input");
-    const taskList = document.getElementById("task-list");
+    const taskInput = document.getElementById("task-input");
+    const taskList= document.getElementById("taskInput");
 
     function addTask() {
         const taskText = Taskinput.value.trim();
