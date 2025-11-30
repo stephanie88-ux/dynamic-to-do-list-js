@@ -10,17 +10,18 @@ document.addEventListener("DOMContentLoaded", event() => {
             alert("Please enter a task.");
             return;
         }
-         constRemoveButton = document.createElement("button");
+        const li = document.createElement("li");
+        li.textContent = taskText;
+
+
+        constRemoveButton = document.createElement("button");
         removeButton.textContent = "Remove";
+        removeButton.className = "remove-btn";
 
-        removeButton.addEventListener("click", () => {
-            taskList.removeChild(taskItem);
-        }
-        li = document.createElement("li");
-        taskItem.textContent = taskText + " ";
-        taskItem.appendChild(removeButton);
-        taskList.appendChild(taskItem); 
-
+        removeButton.onclick = function() {
+        taskList.removeChild(li);
+        };
+ 
         Taskinput.value = "";
     }
         
