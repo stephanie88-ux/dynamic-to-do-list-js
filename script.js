@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", event() => {
 
         removeButton.onclick = function() {
         taskList.removeChild(li);
+        
+        li.appendChild(removeButton);
+        taskList.appendChild(li);
         };
  
         Taskinput.value = "";
